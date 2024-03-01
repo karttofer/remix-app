@@ -20,6 +20,11 @@ export default function PeopleId() {
   );
   const [detailData, setDetailData] = useState({});
 
+  /**
+   * @description We are getting films and home world from the APi
+   * since this majory of the information needs to be fetch from backend
+   * getDetailData will be in-charge of get these information
+   */
   useEffect(() => {
     const getDetailData = async (urls, keyName) => {
       try {
@@ -54,16 +59,25 @@ export default function PeopleId() {
         home: element.homeworld,
       }));
 
-      getDetailData(
-        detailPeopleDetails.map((detail) => detail.home),
-        "home"
-      );
-
       const filmUrls = detailPeopleDetails.reduce(
         (acc, detail) => acc.concat(detail.films),
         []
       );
-      getDetailData(filmUrls, "films");
+
+      const keys = [
+        {
+          key: "home",
+          call: detailPeopleDetails.map((detail) => detail.home),
+        },
+        {
+          key: "films",
+          call: filmUrls,
+        },
+      ];
+
+      keys.forEach(async (fetchKeys) => {
+        await getDetailData(fetchKeys.call, fetchKeys.key);
+      });
     }
   }, [data, setDetailData]);
 

@@ -1,5 +1,4 @@
 {
-  "type": "module",
   "scripts": {
     "start": "remix dev",
     "build": "npx remix build"
@@ -10,12 +9,12 @@
     "@remix-run/react": "^2.8.0",
     "@remix-run/serve": "^2.8.0",
     "concurrently": "^8.2.2",
+    "cookie": "^0.6.0",
     "isbot": "4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "remix": "^2.8.0",
     "remix-flat-routes": "^0.6.4",
-    "sass": "^1.71.1",
-    "sass-loader": "^14.1.1",
     "tailwindcss": "^3.4.1"
   },
   "license": "MIT"

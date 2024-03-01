@@ -1,5 +1,15 @@
 // Dependencies
-import { Links, Meta, Outlet, Scripts, LiveReload } from "@remix-run/react";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  LiveReload,
+  useNavigate,
+  json,
+  useLoaderData,
+} from "@remix-run/react";
+import { useEffect } from "react";
 
 // Components
 import Navbar from "./globals/components/Navbar";
@@ -9,8 +19,32 @@ import stylesheet from "./app.css";
 
 export const links = () => [{ rel: "stylesheet", href: stylesheet }];
 
+export const meta = () => {
+  return [
+    { title: "Star Wars App" },
+    {
+      property: "og:title",
+      content: "Star Wars App",
+    },
+    {
+      name: "description",
+      content:
+        "Simple we app application where you can find some characters from Star wars",
+    },
+  ];
+};
+
+export async function loader() {
+  return json({ PORT: process.env.BASE_URL });
+}
+
 export default function Root() {
-  const PORT = 3000;
+  const { PORT } = useLoaderData();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/home");
+  }, [navigate]);
 
   return (
     <html>

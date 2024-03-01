@@ -2,6 +2,7 @@
 build/
 dist/
 .remix/
+api
 
 # Cache
 **/.cache/

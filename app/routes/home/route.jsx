@@ -25,11 +25,11 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <main>
       <section className="flex flex-wrap">
         <PeopleCard peopleList={data.results} />
       </section>
       <Outlet />
-    </div>
+    </main>
   );
 }
