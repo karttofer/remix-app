@@ -6,7 +6,9 @@ import {
   LiveReload
 } from "@remix-run/react";
 
-export default function App() {
+export default function Root() {
+  const PORT = 3000
+
   return (
     <html>
       <head>
@@ -18,10 +20,9 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <h1>Hello world!aaaa</h1>
+        <LiveReload REMIX_DEV_SERVER_WS_PORT={PORT} />
         <Outlet />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
