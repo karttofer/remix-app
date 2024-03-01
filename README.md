@@ -20,7 +20,7 @@
 
 - Create two routes:
     - Route 1: Path "/home" should render a component named "Home".
-    - Route 2: Path "/people" should render a  dynamic component named "By People Name". Do first 10.
+    - Route 2: Path "/people" should be dynamic route. Should use "name" from JSON response. Do first 10.
 - Implement navigation links to switch between the "Home" and "People" pages.
 
 ### Task 3: Data Fetching (30 points)
