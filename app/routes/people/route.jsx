@@ -1,10 +1,9 @@
-import { Outlet } from "@remix-run/react";
-
-export default function people() {
-  return (
-    <div>
-      <h1>People</h1>
-      <Outlet />
-    </div>
-  );
+export default function People() {
+    return (
+        <div>
+            <h1 className="text-3xl font-bold underline">
+                Hello worldaasasa!
+            </h1>
+        </div>
+    );
 }
