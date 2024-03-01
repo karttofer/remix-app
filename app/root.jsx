@@ -6,6 +6,12 @@ import {
   LiveReload
 } from "@remix-run/react";
 
+import stylesheet from "./app.css";
+
+export const links = () => [
+  { rel: "stylesheet", href: stylesheet },
+];
+
 export default function Root() {
   const PORT = 3000
 
