@@ -5,8 +5,8 @@ import { Outlet, json, useLoaderData } from "@remix-run/react";
 import { useDataFetching } from "../../helpers/useDataFetching";
 
 // Non-Lazy Components
-import Loading from '../home/components/loading'
-import PeopleCard from '../home/components/peopleCard'
+import Loading from "../home/components/loading";
+import PeopleCard from "../home/components/peopleCard";
 
 export async function loader() {
   return json({ BASE_URL: process.env.BASE_URL });
@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className='flex flex-wrap'>
+      <section className="flex flex-wrap">
         <PeopleCard peopleList={data.results} />
       </section>
       <Outlet />
