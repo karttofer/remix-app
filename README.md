@@ -27,7 +27,7 @@
 
 - Create a data fetching function named "fetchPeople" in the "Home" component.
 - Use the `useEffect` hook to fetch data from the endpoint "https://swapi.dev/people" when the component mounts.
-- Display the fetched data as a list on the "Home" page that will go to each "People" page when clicked.
+- Display the fetched data as a list on the "Home" page that will go to each "People" page when clicked which will have details for each Person displayed in a table.
 
 ### Task 4: Forms and Form Submission (30 points)
 
