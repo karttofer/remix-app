@@ -1,0 +1,48 @@
+# Build
+build/
+dist/
+.remix/
+
+# Cache
+node_modules/
+
+# IDE
+.idea/
+**/.vscode/
+
+# Editors
+.eslintrc.js
+.prettierrc.js
+.stylelintrc.js
+
+# Testing
+coverage/
+test-results/
+
+# Temporary files
+.DS_Store
+*.tmp
+*.log
+*.sqlite
+
+# Environment variables
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+logs/
+
+# NPM lock files
+package-lock.json
+yarn.lock
+
+# Specific Remix folders (optional)
+# Uncomment these lines if you want to ignore Remix specific folders
+
+# app/routes/__*
+# app/data/__*
+# app/assets/__*
+# app/db.server.ts
+# app/db.client.ts
