@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "npx remix-serve build/index.js",
+    "build": "npx remix build"
+  },
+  "dependencies": {
+    "@remix-run/dev": "^2.8.0",
+    "@remix-run/node": "^2.8.0",
+    "@remix-run/react": "^2.8.0",
+    "@remix-run/serve": "^2.8.0",
+    "isbot": "4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "license": "MIT"
+}

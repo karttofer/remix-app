@@ -4,6 +4,7 @@ dist/
 .remix/
 
 # Cache
+**/.cache/
 node_modules/
 
 # IDE
@@ -37,12 +38,3 @@ logs/
 # NPM lock files
 package-lock.json
 yarn.lock
-
-# Specific Remix folders (optional)
-# Uncomment these lines if you want to ignore Remix specific folders
-
-# app/routes/__*
-# app/data/__*
-# app/assets/__*
-# app/db.server.ts
-# app/db.client.ts
