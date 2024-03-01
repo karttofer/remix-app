@@ -9,13 +9,13 @@ import {
   json,
   useLoaderData,
 } from "@remix-run/react";
-import { useEffect } from "react";
 
 // Components
 import Navbar from "./globals/components/Navbar";
 
 // Style
 import stylesheet from "./app.css";
+import { useEffect } from "react";
 
 export const links = () => [{ rel: "stylesheet", href: stylesheet }];
 
@@ -34,18 +34,19 @@ export const meta = () => {
   ];
 };
 
-export async function loader() {
-  return json({ PORT: process.env.BASE_URL });
+export async function loader({ request }) {
+  const cookieHeader = request.headers.get("Cookie");
+  return json({ PORT: process.env.BASE_URL, cookieHeader });
 }
 
 export default function Root() {
-  const { PORT } = useLoaderData();
-  const navigate = useNavigate();
-
+  const { PORT, cookieHeader } = useLoaderData();
+  const nav = useNavigate();
   useEffect(() => {
-    navigate("/home");
-  }, [navigate]);
-
+    if (!cookieHeader) {
+      nav("/login");
+    }
+  }, [cookieHeader]);
   return (
     <html>
       <head>
