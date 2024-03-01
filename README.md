@@ -25,7 +25,7 @@
 
 ### Task 3: Data Fetching (30 points)
 
-- Create a data fetching function named "fetchPosts" in the "Home" component.
+- Create a data fetching function named "fetchPeople" in the "Home" component.
 - Use the `useEffect` hook to fetch data from the endpoint "https://swapi.dev/people" when the component mounts.
 - Display the fetched data as a list on the "Home" page that will go to each "People" page when clicked.
 
