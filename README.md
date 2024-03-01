@@ -1,53 +1,28 @@
-# Exam (https://remix.run/)
+# Remix-Simple-Starwars-App
 
-## Instructions
+Hello, I would like to thank you for the opportunity to participate in your selection process. Before being able to run the app, there are certain aspects that need to be addressed.
 
-1. This exam is designed to assess your proficiency in using the Remix web framework for building web applications.
-2. You have 8 hours to complete the exam.
-3. You are allowed to use any online resources, documentation, or tutorials related to Remix during the exam.
-4. Make sure to adhere to best practices and follow Remix conventions when completing the tasks.
+## .Env
 
-## Tasks
+You will need to config/create the .env since it is a bad practice to put it public with certain information (I know, this is code-test but you know). The only thing you have to use is this variables here.
 
-### Task 1: Setup and Configuration (20 points)
+```
+# remix
+PORT=3000
+# baseUrl
+BASE_URL=https://swapi.dev/api/
+```
 
-- Fork this project.
-- Configure the project to use TypeScript.
-- Set up a basic file structure adhering to Remix conventions.
-- Set up a public git repository where you will push your code as you work on the tasks and later submit it.
+## Run
 
-### Task 2: Routing and Navigation (20 points)
+I love Yarn, so you will have to use Yarn to run this app, don't worry isn't difficult.
 
-- Create two routes:
-  - Route 1: Path "/home" should render a component named "Home".
-  - Route 2: Path "/people" should be dynamic route. Should use "name" from JSON response. Do first 10.
-- Implement navigation links to switch between the "Home" and "People" pages.
+```
+yarn install
 
-### Task 3: Data Fetching (30 points)
+yarn buind <- If needed
 
-- Create a data fetching function named "fetchPeople" in the "Home" component.
-- Use the `useEffect` hook to fetch data from the endpoint "https://swapi.dev/people" when the component mounts.
-- Display the fetched data as a list on the "Home" page that will go to each "People" page when clicked which will have details for each Person displayed in a table.
+yarn start
+```
 
-### Task 4: Forms and Form Submission (30 points)
-
-- Create a form component named "ContactForm" with fields for "name", "email", and "message".
-- Implement form validation ensuring all fields are required.
-- Upon form submission, console log the form data.
-- Display a success message if everything is valid.
-
-### Task 5: Styling (10 points)
-
-- Use Tailwind CSS to style the application components and layout.
-
-### Bonus Task: Authentication (Extra 20 points)
-
-- Implement authentication using Remix's built-in session management.
-- Create a login page with email and password fields.
-- Upon successful login, store the user session and redirect them to the "Home" page.
-
-## Submission
-
-- Once completed, share your public repository via email back go goran@bemeir.com.
-
-**Note:** Ensure your code is clean, well-commented, and follows best practices. Good luck!
+## Congrats!
