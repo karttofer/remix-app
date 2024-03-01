@@ -9,6 +9,7 @@ const sessionStorage = createCookieSessionStorage({
     httpOnly: true,
     secrets: ["this_should_be_a_hash"],
     secure: process.env.NODE_ENV === "development",
+    maxAge: 60,
   },
 });
 
