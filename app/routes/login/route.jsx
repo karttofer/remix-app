@@ -24,7 +24,7 @@ function LoginPage() {
         >
           <div className="mb-4 w-full">
             <label
-              for="email"
+              htmlFor="email"
               className="block text-yellow-400 text-sm font-bold mb-2"
             >
               Email:
@@ -39,7 +39,7 @@ function LoginPage() {
           </div>
           <div className="mb-4 w-full">
             <label
-              for="password"
+              htmlFor="password"
               className="block text-yellow-400 text-sm font-bold mb-2"
             >
               Password:
