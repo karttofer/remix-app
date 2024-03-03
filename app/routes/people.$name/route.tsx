@@ -81,7 +81,7 @@ const PeopleId: React.FC = () => {
 
   return (
     <main className="bg-gray-500 flex items-center justify-center">
-      <section className="bg-gray-900 text-white p-6">
+      <section className="flex items-center justify-center">
         {Object.keys(detailData).length &&
           data &&
           data.results &&
@@ -109,8 +109,9 @@ const PeopleId: React.FC = () => {
                     {detailData &&
                       detailData.homeworld.map((world, worldIndex) => (
                         <li key={worldIndex} className="mb-1">
-                          <span className="text-gray-400">Name:</span>
-                          {world.name}
+                          <span className="text-gray-400">
+                            Name: {world.name}
+                          </span>
                         </li>
                       ))}
                   </ul>
@@ -122,8 +123,9 @@ const PeopleId: React.FC = () => {
                       detailData.films &&
                       detailData.films.map((film, filmIndex) => (
                         <li key={filmIndex} className="mb-1">
-                          <span className="text-gray-400">Title:</span>
-                          {film.title}
+                          <span className="text-gray-400">
+                            Title:{film.title}
+                          </span>
                         </li>
                       ))}
                   </ul>

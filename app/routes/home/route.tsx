@@ -28,7 +28,7 @@ const Home: React.FC = () => {
 
   return (
     <main>
-      <section className="flex flex-wrap">
+      <section className="flex items-center justify-center flex-wrap">
         <PeopleCard peopleList={data.results} />
       </section>
       <Outlet />

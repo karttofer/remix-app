@@ -16,6 +16,33 @@ body {
 
   touch-action: manipulation;
 }
-main {
-  height: calc(100% - 72px);
+
+nav {
+  min-height: 71px;
+}
+
+body {
+  container-name: body-container;
+  height: calc(100% - 1px);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  margin: 0;
+}
+
+section {
+  height: 100%;
+}
+
+@media (max-width: 1112px) {
+  html {
+    height: 100%;
+  }
+  body {
+    min-height: calc(100% - 1px);
+    height: auto;
+  }
+
+  main {
+    width: 100%;
+  }
 }

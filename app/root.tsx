@@ -13,6 +13,7 @@ import {
 import type { ActionFunctionArgs } from '@remix-run/node'
 // Components
 import Navbar from './globals/components/Navbar'
+import Footer from './globals/components/Footer'
 // Style
 import stylesheet from './style/root.css'
 import { useEffect } from 'react'
@@ -85,6 +86,9 @@ const Root: React.FC = () => {
         <LiveReload />
         <Outlet />
         <Scripts />
+        <footer className="bg-gray-800 text-white py-8">
+          <Footer />
+        </footer>
       </body>
     </html>
   )
