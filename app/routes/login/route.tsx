@@ -1,22 +1,26 @@
-import { Form, Link } from "@remix-run/react";
-import { authenticator } from "../../utils/auth.server";
+// Dependencies
+import { Form } from '@remix-run/react'
+import type { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node'
 
-async function action({ request }) {
-  return await authenticator.authenticate("user-pass", request, {
-    successRedirect: "/home",
-    failureRedirect: "/login",
-  });
+// Authq
+import { authenticator } from '../../utils/auth.server'
+
+async function action({ request }: ActionFunctionArgs) {
+  return await authenticator.authenticate('user-pass', request, {
+    successRedirect: '/home',
+    failureRedirect: '/login',
+  })
 }
 
-async function loader({ request }) {
+async function loader({ request }: LoaderFunctionArgs) {
   return await authenticator.isAuthenticated(request, {
-    successRedirect: "/home",
-  });
+    successRedirect: '/home',
+  })
 }
 
-function LoginPage() {
+const LoginPage: React.FC = () => {
   return (
-    <main className="flex items-center justify-center min-h-screen bg-gray-800 text-white">
+    <main className="flex items-center justify-center  bg-gray-800 text-white">
       <section>
         <Form
           method="post"
@@ -62,8 +66,8 @@ function LoginPage() {
         </Form>
       </section>
     </main>
-  );
+  )
 }
 
-export default LoginPage;
-export { action, loader };
+export default LoginPage
+export { action, loader }

@@ -1,9 +1,8 @@
 // Dependencies
-import { Link } from "@remix-run/react";
-import { useLocation } from "@remix-run/react";
+import { Link, useLocation, Location } from '@remix-run/react'
 
-const Navbar = () => {
-  const location = useLocation();
+const Navbar: React.FC = () => {
+  const location: Location = useLocation()
   return (
     <nav className="bg-gray-900 p-4">
       <div className="container mx-auto flex items-center justify-between">
@@ -13,7 +12,7 @@ const Navbar = () => {
           </span>
         </div>
         <div className="flex items-center">
-          {location.pathname !== "/home" && (
+          {location.pathname !== '/home' && (
             <Link
               to="/home"
               className="text-white hover:text-gray-400 px-3 py-2"
@@ -22,7 +21,7 @@ const Navbar = () => {
             </Link>
           )}
 
-          {location.pathname !== "/contact" && (
+          {location.pathname !== '/contact' && (
             <Link
               to="/contact"
               className="text-white hover:text-gray-400 px-3 py-2"
@@ -33,7 +32,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

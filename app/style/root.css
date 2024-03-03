@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+main {
+  height: calc(100% - 72px);
+}

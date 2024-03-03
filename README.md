@@ -7,8 +7,6 @@ Hello, I would like to thank you for the opportunity to participate in your sele
 You will need to config/create the .env since it is a bad practice to put it public with certain information (I know, this is code-test but you know). The only thing you have to use is this variables here.
 
 ```
-# remix
-PORT=3000
 # baseUrl
 BASE_URL=https://swapi.dev/api/
 ```

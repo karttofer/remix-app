@@ -1,47 +1,59 @@
-import React, { useState } from "react";
+// Dependencies
+import React, { useState } from 'react'
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+// Models
+import { IContactFormData, IContactError } from '../../globals/models/globals'
 
-  const [errors, setErrors] = useState({});
-  const [successMessage, setSuccessMessage] = useState("");
+const ContactForm: React.FC = () => {
+  const [formData, setFormData] = useState<IContactFormData>({
+    name: '',
+    email: '',
+    message: '',
+  })
 
-  const handleChange = (e) => {
+  const [errors, setErrors] = useState<IContactError>({
+    name: '',
+    email: '',
+    message: '',
+  })
+  const [successMessage, setSuccessMessage] = useState('')
+
+  const handleChange = (event: { target: { name: string; value: string } }) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+      [event.target.name]: event.target.value,
+    })
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
 
-    // Form validation
-    const newErrors = {};
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+    const newErrors: IContactError = {
+      name: '',
+      email: '',
+      message: '',
     }
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required'
+    }
+
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = 'Email is required'
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErrors.email = "Invalid email address";
+      newErrors.email = 'Invalid email address'
     }
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
+      newErrors.message = 'Message is required'
     }
 
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-    } else {
-      // Form is valid, handle submission
-      console.log("Form data:", formData);
-      setSuccessMessage("Form submitted successfully!");
+    if (Object.values(newErrors).some((form) => form !== '')) {
+      return setErrors(newErrors)
     }
-  };
+
+    console.log('Form data:', formData)
+    return setSuccessMessage('Form submitted successfully!')
+  }
 
   return (
     <main className="bg-gray-800 text-white min-h-screen flex items-center justify-center">
@@ -65,7 +77,7 @@ const ContactForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 className={`w-full p-2 border border-gray-300 rounded ${
-                  errors.name ? "border-red-500" : ""
+                  errors.name ? 'border-red-500' : ''
                 } text-white bg-gray-700`}
               />
               {errors.name && (
@@ -86,7 +98,7 @@ const ContactForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className={`w-full p-2 border border-gray-300 rounded ${
-                  errors.email ? "border-red-500" : ""
+                  errors.email ? 'border-red-500' : ''
                 } text-white bg-gray-700`}
               />
               {errors.email && (
@@ -105,9 +117,9 @@ const ContactForm = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows="4"
+                rows={4}
                 className={`w-full p-2 border border-gray-300 rounded ${
-                  errors.message ? "border-red-500" : ""
+                  errors.message ? 'border-red-500' : ''
                 } text-white bg-gray-700`}
               ></textarea>
               {errors.message && (
@@ -127,7 +139,7 @@ const ContactForm = () => {
         </div>
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm
