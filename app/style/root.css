@@ -15,6 +15,9 @@ body {
   font-style: normal;
 
   touch-action: manipulation;
+
+  background: #141d31;
+  color: #fff;
 }
 
 nav {

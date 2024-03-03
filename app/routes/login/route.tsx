@@ -18,7 +18,7 @@ async function loader({ request }: LoaderFunctionArgs) {
 
 const LoginPage: React.FC = () => {
   return (
-    <main className="bg-gray-800 text-white">
+    <main className="text-white">
       <section className="flex items-center justify-center">
         <Form
           method="post"

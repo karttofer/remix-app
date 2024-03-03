@@ -86,7 +86,7 @@ const Root: React.FC = () => {
         <LiveReload />
         <Outlet />
         <Scripts />
-        <footer className="bg-gray-800 text-white py-8">
+        <footer>
           <Footer />
         </footer>
       </body>

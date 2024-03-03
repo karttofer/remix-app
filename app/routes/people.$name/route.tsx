@@ -80,7 +80,7 @@ const PeopleId: React.FC = () => {
   }
 
   return (
-    <main className="bg-gray-500 flex items-center justify-center">
+    <main className="flex items-center justify-center">
       <section
         role="region"
         aria-label="Character Details"

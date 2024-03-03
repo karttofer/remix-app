@@ -12,11 +12,13 @@ const PeopleData: React.FC<IPeopleList> = ({ peopleList }) => {
             key={`${people.name}-${people.mass}`}
             role="article"
             tabIndex={0}
-            className="cursor-pointer hover:bg-neutral-100 max-w-30 min-w-30 m-5 max-w-sm rounded overflow-hidden shadow-lg"
+            className="transform  rounded-xl h-40 w-40 sm:h-64 sm:w-64 bg-white shadow-xl transition duration-300 hover:scale-105 bg-neutral-200 cursor-pointer hover:bg-neutral-300 max-w-30 min-w-30 m-5 max-w-sm rounded overflow-hidden shadow-lg"
             onClick={() => navigate(`/people/${people.name}`)}
           >
             <div className="px-6 py-4">
-              <h2 className="font-bold text-xl mb-2">{people.name}</h2>
+              <h2 className="hover:break-all text-black font-bold text-md mb-2">
+                {people.name}
+              </h2>
               <p className="text-gray-700 text-base">
                 Birth Year: {people.birth_year}
               </p>

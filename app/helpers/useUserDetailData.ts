@@ -22,7 +22,13 @@ const useDetailData = () => {
   }: UseDetailDataProps): Promise<void> => {
     try {
       const dataPromises = urls.map(async (url) => {
-        const response = await fetch(url)
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept-Encoding': 'gzip, compress, br',
+          },
+        })
         if (!response.ok) {
           throw new Error(`Failed to fetch data. Status: ${response.status}`)
         }

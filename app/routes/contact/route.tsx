@@ -51,7 +51,7 @@ const ContactForm: React.FC = () => {
     return setSuccessMessage('Form submitted successfully!')
   }
   return (
-    <main className="bg-gray-800 text-whiteflex items-center justify-center">
+    <main className="text-whiteflex items-center justify-center">
       <section className="flex items-center justify-center">
         <div className="w-96 mt-8 p-4 border border-gray-300 rounded bg-black text-white">
           <h2 className="text-3xl font-bold mb-4 text-yellow-500">

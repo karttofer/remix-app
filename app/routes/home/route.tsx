@@ -1,12 +1,14 @@
 // Dependencies
 import { Outlet, json, useLoaderData } from '@remix-run/react'
+import { Suspense, lazy } from 'react'
 // Helpers
 import useDataFetching from '../../helpers/useDataFetching'
 // Models
 import { IEnvBaseUrl } from '../../globals/models/globals'
 // Components
 import Loading from '../../globals/components/loading'
-import PeopleCard from './components/peopleCard'
+
+const PeopleCardLazyComponent = lazy(() => import('./components/peopleCard'))
 
 export async function loader() {
   return json({ BASE_URL: process.env.BASE_URL })
@@ -29,7 +31,9 @@ const Home: React.FC = () => {
   return (
     <main>
       <section className="flex items-center justify-center flex-wrap">
-        <PeopleCard peopleList={data.results} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <PeopleCardLazyComponent peopleList={data.results} />
+        </Suspense>
       </section>
       <Outlet />
     </main>
