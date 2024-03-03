@@ -12,5 +12,4 @@ const coockieSession = createCookieSessionStorage({
     expires: new Date(Date.now() + 60_000),
   },
 })
-
 export default coockieSession

@@ -1,12 +1,9 @@
 // Dependencies
 import { Outlet, json, useLoaderData } from '@remix-run/react'
-
 // Helpers
 import useDataFetching from '../../helpers/useDataFetching'
-
 // Models
 import { IEnvBaseUrl } from '../../globals/models/globals'
-
 // Components
 import Loading from '../../globals/components/loading'
 import PeopleCard from './components/peopleCard'
@@ -38,5 +35,4 @@ const Home: React.FC = () => {
     </main>
   )
 }
-
 export default Home

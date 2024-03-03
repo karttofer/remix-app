@@ -35,3 +35,12 @@ export interface IPeopleDetailsInformationLinks {
   films: string[]
   homeworld: string
 }
+
+export interface DetailData {
+  [key: string]: any[]
+}
+
+export interface UseDetailDataProps {
+  urls: string[]
+  keyName: string
+}

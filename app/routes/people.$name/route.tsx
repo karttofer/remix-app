@@ -1,17 +1,14 @@
 // Dependencies
 import { json, useLoaderData, useParams, Params } from '@remix-run/react'
 import { useEffect } from 'react'
-
 // Helper
 import useDataFetching from '../../helpers/useDataFetching'
 import useDetailData from '../../helpers/useUserDetailData'
-
 // Models
 import {
   IEnvBaseUrl,
   IPeopleDetailsInformationLinks,
 } from '../../globals/models/globals'
-
 // Components
 import Loading from '../../globals/components/loading'
 
@@ -32,20 +29,17 @@ const PeopleId: React.FC = () => {
       try {
         if (data) {
           const { results } = data
-
           const peopleDetails: IPeopleDetailsInformationLinks[] = results.map(
             (element: IPeopleDetailsInformationLinks) => ({
               films: element.films,
               homeworld: element.homeworld,
             })
           )
-
           const filmUrls = peopleDetails.reduce(
             (acc: string[], detail: { films: string[] }) =>
               acc.concat(detail.films),
             []
           )
-
           const keys = [
             {
               key: 'homeworld',
@@ -141,5 +135,4 @@ const PeopleId: React.FC = () => {
     </main>
   )
 }
-
 export default PeopleId

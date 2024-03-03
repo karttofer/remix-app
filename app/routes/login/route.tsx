@@ -1,8 +1,7 @@
 // Dependencies
 import { Form } from '@remix-run/react'
 import type { ActionFunctionArgs, LoaderFunctionArgs } from '@remix-run/node'
-
-// Authq
+// Auth
 import { authenticator } from '../../utils/auth.server'
 
 async function action({ request }: ActionFunctionArgs) {
@@ -11,7 +10,6 @@ async function action({ request }: ActionFunctionArgs) {
     failureRedirect: '/login',
   })
 }
-
 async function loader({ request }: LoaderFunctionArgs) {
   return await authenticator.isAuthenticated(request, {
     successRedirect: '/home',
@@ -68,6 +66,5 @@ const LoginPage: React.FC = () => {
     </main>
   )
 }
-
 export default LoginPage
 export { action, loader }

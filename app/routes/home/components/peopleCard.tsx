@@ -1,6 +1,5 @@
 // Dependencies
 import { Link } from '@remix-run/react'
-
 // Models
 import { IPeopleList } from '../../../globals/models/globals'
 
@@ -35,5 +34,4 @@ const PeopleData: React.FC<IPeopleList> = ({ peopleList }) => (
       ))}
   </>
 )
-
 export default PeopleData

@@ -1,6 +1,5 @@
 // Dependencies
 import React, { useState } from 'react'
-
 // Models
 import { IContactFormData, IContactError } from '../../globals/models/globals'
 
@@ -10,21 +9,18 @@ const ContactForm: React.FC = () => {
     email: '',
     message: '',
   })
-
   const [errors, setErrors] = useState<IContactError>({
     name: '',
     email: '',
     message: '',
   })
   const [successMessage, setSuccessMessage] = useState('')
-
   const handleChange = (event: { target: { name: string; value: string } }) => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value,
     })
   }
-
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
 
@@ -54,7 +50,6 @@ const ContactForm: React.FC = () => {
     console.log('Form data:', formData)
     return setSuccessMessage('Form submitted successfully!')
   }
-
   return (
     <main className="bg-gray-800 text-white min-h-screen flex items-center justify-center">
       <section>
@@ -141,5 +136,4 @@ const ContactForm: React.FC = () => {
     </main>
   )
 }
-
 export default ContactForm

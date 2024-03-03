@@ -1,6 +1,5 @@
 // Dependencies
 import { useState, useEffect } from 'react'
-
 // Models
 import { IFetchDataResult } from '../globals/models/globals'
 
@@ -38,5 +37,4 @@ const useDataFetching = (url: string): IFetchDataResult => {
 
   return { data, loading, error }
 }
-
 export default useDataFetching

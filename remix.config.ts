@@ -1,7 +1,5 @@
 // remix.config.js
-
 import { DefineRoutesFunction, flatRoutes } from 'remix-flat-routes'
-
 export default {
   ignoredRouteFiles: ['**/*'],
   async routes(defineRoutes: DefineRoutesFunction) {

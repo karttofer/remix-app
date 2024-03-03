@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,8 +9,13 @@ body {
   margin: 0px;
   box-sizing: border-box;
   height: 100%;
-}
 
+  font-family: 'Roboto Mono', system-ui, monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  touch-action: manipulation;
+}
 main {
   height: calc(100% - 72px);
 }

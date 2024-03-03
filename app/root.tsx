@@ -11,16 +11,13 @@ import {
   useLoaderData,
 } from '@remix-run/react'
 import type { ActionFunctionArgs } from '@remix-run/node'
-
 // Components
 import Navbar from './globals/components/Navbar'
-
 // Style
 import stylesheet from './style/root.css'
 import { useEffect } from 'react'
 
 export const links = () => [{ rel: 'stylesheet', href: stylesheet }]
-
 export const meta = () => {
   return [
     { title: 'Star Wars App' },
@@ -32,6 +29,27 @@ export const meta = () => {
       name: 'description',
       content:
         'Simple we app application where you can find some characters from Star wars',
+    },
+    {
+      name: 'viewport',
+      content: 'width=device-width',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '72x72',
+      href: '../public/maskable_icon_x72.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '48x48',
+      href: '../public/maskable_icon_x48.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '../public/maskable_icon_x48.ico',
     },
   ]
 }
@@ -54,7 +72,7 @@ const Root: React.FC = () => {
   }, [cookieHeader])
 
   return (
-    <html>
+    <html lang="en">
       <head>
         <link rel="icon" href="data:image/x-icon;base64,AA" />
         <Meta />
