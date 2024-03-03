@@ -3,7 +3,6 @@ import { Link, useLocation, Location } from '@remix-run/react'
 
 const Navbar: React.FC = () => {
   const location: Location = useLocation()
-
   return (
     <nav className="bg-gray-900 p-4">
       <div className="container mx-auto flex items-center justify-between">

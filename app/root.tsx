@@ -11,12 +11,12 @@ import {
   useLoaderData,
 } from '@remix-run/react'
 import type { ActionFunctionArgs } from '@remix-run/node'
+import { useEffect } from 'react'
 // Components
 import Navbar from './globals/components/Navbar'
 import Footer from './globals/components/Footer'
 // Style
 import stylesheet from './style/root.css'
-import { useEffect } from 'react'
 
 export const links = () => [{ rel: 'stylesheet', href: stylesheet }]
 export const meta = () => {
@@ -56,7 +56,7 @@ export const meta = () => {
 }
 
 export async function loader({ request }: ActionFunctionArgs) {
-  const cookieHeader = request.headers.get('Cookie')
+  const cookieHeader = request.headers.get('_session')
   return json({ cookieHeader })
 }
 

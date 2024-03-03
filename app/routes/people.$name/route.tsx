@@ -81,31 +81,39 @@ const PeopleId: React.FC = () => {
 
   return (
     <main className="bg-gray-500 flex items-center justify-center">
-      <section className="flex items-center justify-center">
+      <section
+        role="region"
+        aria-label="Character Details"
+        className="flex items-center justify-center"
+      >
         {Object.keys(detailData).length &&
           data &&
           data.results &&
           data.results.map((people: any, index: any) => (
-            <div
+            <article
               key={index}
               className="max-w-sm w-full lg:max-w-full lg:flex mx-auto mb-8"
+              role="article"
             >
               <div className="bg-black rounded-lg p-4 flex flex-col justify-between leading-normal w-full">
-                <div className="mb-4">
+                <header>
                   <h2 className="text-yellow-500 text-xl font-bold mb-2">
                     {people.name}
                   </h2>
-                </div>
-                <div className="mb-4">
+                </header>
+                <section>
                   <p className="text-gray-400 text-sm">
                     Birth Year: {people.birth_year}
                   </p>
-                </div>
-                <div className="mb-4">
+                </section>
+                <section>
                   <p className="text-gray-400 text-sm mb-2">
                     Home World Description
                   </p>
-                  <ul className="list-none ml-4">
+                  <ul
+                    className="list-none ml-4"
+                    aria-label="Home World Details"
+                  >
                     {detailData &&
                       detailData.homeworld.map((world, worldIndex) => (
                         <li key={worldIndex} className="mb-1">
@@ -115,23 +123,23 @@ const PeopleId: React.FC = () => {
                         </li>
                       ))}
                   </ul>
-                </div>
-                <div>
+                </section>
+                <section>
                   <p className="text-gray-400 text-sm mb-2">Movies</p>
-                  <ul className="list-none ml-4">
+                  <ul className="list-none ml-4" aria-label="Movies List">
                     {detailData &&
                       detailData.films &&
                       detailData.films.map((film, filmIndex) => (
                         <li key={filmIndex} className="mb-1">
                           <span className="text-gray-400">
-                            Title:{film.title}
+                            Title: {film.title}
                           </span>
                         </li>
                       ))}
                   </ul>
-                </div>
+                </section>
               </div>
-            </div>
+            </article>
           ))}
       </section>
     </main>

@@ -1,15 +1,24 @@
 // Dependencies
 import { createCookieSessionStorage } from '@remix-run/node'
 
-const coockieSession = createCookieSessionStorage({
+type SessionData = {
+  userId: string
+}
+
+type SessionFlashData = {
+  error: string
+}
+
+export const sessionStorage = createCookieSessionStorage<
+  SessionData,
+  SessionFlashData
+>({
   cookie: {
     name: '_session',
-    sameSite: 'lax',
-    path: '/',
-    secrets: ['this_should_be_a_hash'],
-    secure: process.env.NODE_ENV === 'development',
-    maxAge: 60,
-    expires: new Date(Date.now() + 60_000),
+    secure: true,
+    httpOnly: true,
+    sameSite: 'strict',
   },
 })
-export default coockieSession
+
+export let { getSession, commitSession, destroySession } = sessionStorage
